@@ -1,0 +1,77 @@
+/*h1{
+    color: gold !important;
+} */
+
+/* Universal Selector */
+*{
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(49, 213, 224);
+}
+
+/* Nav Bar */
+nav{
+    background-color: rgb(30, 161, 248);
+    padding: 20px;
+}
+
+div{
+    float: right;
+}
+
+/* Type Selector - CALL THE TAG */
+h1{
+    color: rgba(30, 18, 199, 0.856) !important;
+    text-align: center;
+    font-size: 3rem;
+}
+
+section{
+    height: 200vh;
+    text-align: center;
+}
+
+h2{
+    font-size: 1.5rem;
+}
+
+/* ID Selector */
+#zuitt-motto{
+    letter-spacing: 5px;
+}
+
+h3{
+    letter-spacing: 25px
+}
+
+/* Adjacent Selector */
+h3 + img{
+    height: 300px;
+    width: 300px;;
+}
+
+ol{
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Class Selector */
+.offering-item{
+    text-transform: uppercase;
+}
+
+/* Decendant Selector */
+#bootcamp-learning-list li{
+    color: hsl(288, 96%, 51%) ;
+}
+
+a{
+    text-decoration: none;
+}
