@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Display and Flex Properties</title>
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-dark text-light p-3">
+    <h1 class="display-2 fw-bold">HTML Display and Flex Properties</h1>
+    <h3 class="display-4">Display Inline vs Block vs Inline Block</h3>
+    <div class="bg-secondary p-3 mt-5 container rounded-3">
+        <p class="bg-primary p-3" style="width: 100px; height: 100px;">Hello</p>
+        <p>Hello</p>
+        <p>Hello</p>
+        <p>By default, 'p' tags has a display value of block</p>
+        
+        <span class="bg-primary p-3" style="width: 100px; height: 100px;">Hello</span>
+        <span>Hello</span>
+        <span>Hello</span>
+        <p>'span' tags By default have a display value of inline</p>
+
+        <span class="d-block">Hello World</span>    
+        <span class="bg-warning p-3 d-inline-block" style="width: 100px; height: 100px;">Hello World</span>
+        <span>Hello World</span>
+        <span class="d-none">Hello World</span> 
+        
+        
+    </div>
+    <h3 class="display-4 mt-5 text-center">Display Flex and Flex Items</h3>
+    <div class="bg-secondary p-3 mt-5 container rounded-3">
+        <!-- justify-content-[start][end][center] -->
+        <div class="p-3 d-flex justify-content-start">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <div class="p-3 d-flex justify-content-end">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <div class="p-3 d-flex justify-content-center">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <div class="p-3 d-flex justify-content-between">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <div class="p-3 d-flex justify-content-around">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <div class="p-3 d-flex justify-content-evenly">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+        <!-- flex-[column][row] -->
+        <div class="p-3 d-flex flex-column">
+            <span class="bg-primary">Flex Item A</span>
+            <span class="bg-warning">Flex Item B</span>
+            <span class="bg-primary">Flex Item C</span>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+</body>
+</html>
