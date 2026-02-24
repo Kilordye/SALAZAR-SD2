@@ -1,10 +1,122 @@
+/* Basic Reset */
 *{
-    margin: 0 !important;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body Style */
+body{
+    background-color: #0f0f0f;
+    color: #ffffff;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    scroll-behavior: smooth;
+}
+
+/* Navbar */
+.navbar-custom{
+    background-color: #111;
+    border-bottom: 1px solid #333;
+}
+
+/* Navbar Links */
+.navbar-links li a{
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.navbar-links li a:hover{
+    color: #ff0000;
+}
+
+/* Profile Image */
 .profile-img{
-    width: 300px;
-    height: auto;
+    width: 250px;
+    max-width: 80%;
+    border-radius: 50%;
+    padding: 10px;
+    background: white;
+    transition: 0.4s;
+}
+
+.profile-img:hover{
+    transform: scale(1.05);
+}
+
+/* Fade Animation */
+.fade-in{
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Recognition Cards */
+.recognition-card{
+    background: #1a1a1a;
+    border: 1px solid #333;
+    transition: 0.3s;
+}
+
+.recognition-card:hover{
+    transform: translateY(-8px);
+    background: #222;
+    box-shadow: 0 10px 25px rgba(255,255,255,0.1);
+}
+
+/* Project Cards */
+.card{
+    background: #1a1a1a !important;
+    border: 1px solid #333 !important;
+    transition: 0.4s ease;
+}
+
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(255,255,255,0.1);
+}
+
+.card-img-top{
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Buttons */
+.btn-outline-light{
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.btn-outline-light:hover{
+    background: white;
+    color: black;
+}
+
+/* Section spacing */
+section, .container{
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+/* Responsive text */
+@media (max-width: 768px){
+    .display-4{
+        font-size: 2rem;
+    }
+    .display-5{
+        font-size: 1.5rem;
+    }
+    .display-6{
+        font-size: 1rem;
+    }
+    .profile-img{
+        width: 180px;
+    }
 }
