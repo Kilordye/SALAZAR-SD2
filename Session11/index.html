@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Lab Practice</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bootstrap Lab Practice</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="./index.css">
 </head>
+
 <body>
+<<<<<<< HEAD
     <!-- Nav Bar Start -->
     <nav class="navbar navbar-expand-lg bg-light shadow border-bottom border-success border-2 sticky-top">
         <div class="container">
@@ -25,50 +31,85 @@
         </div>
     </nav>
     <!-- Nav Bar End -->
-
-    <!-- Profile Start -->
-    <div class="bg-dark container-fluid p-3 p-lg-5 text-light">
-        <div class="d-flex flex-column justify-content-center align-items-center p-3">
-            <img src="https://wallpapercave.com/wp/wp4770368.jpg" class="img-fluid profile-img bg-white rounded-circle p-3 my-5">
-            <h3 class="display-4 fw-bold">Avengers: Endgame</h3>
-            <h5 class="display-5 mt-5">American superhero film</h5>
-            <p class="col-12 col-md-6 mt-5 display-6">Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU).</p>
-        </div>
+=======
+<!-- Navbar -->
+<div class="p-3 navbar-custom shadow sticky-top">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between">
+        <a href="#" class="text-decoration-none fw-bold text-light fs-4">Development Portfolilo</a>
+        <ul class="d-flex flex-row list-unstyled gap-4 mt-2 mt-md-0 navbar-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Movies</a></li>
+            <li><a href="#">Projects</a></li>
+        </ul>
     </div>
-    <!-- Profile End -->
-    
-    <!-- Recognition Start -->
-    <div class="container mt-5 p-5">
-        <div class="row text-center g-4">
+</div>
+>>>>>>> 8016122b03796753b95a9e4b65a2bd74341edb11
 
-            <div class="col-12 col-md-4">
-                <div class="p-3 border border-dark rounded-4 h-100">
-                    <p class="fw-bold">Directed by:</p>
-                    <p>Anthony Russo & Joe Russo</p>
-                </div>
+<!-- Profile Section -->
+<div class="bg-dark container-fluid text-light fade-in">
+    <div class="d-flex flex-column justify-content-center align-items-center">
+        <img src="https://wallpapercave.com/wp/wp4770368.jpg" class="img-fluid profile-img my-4">
+        <h1 class="display-4 fw-bold">Avengers: Endgame</h1>
+        <h4 class="display-6 mt-3">American Superhero Film</h4>
+        <p class="col-12 col-md-6 mt-4 display-6">
+            Avengers: Endgame is a 2019 American superhero film based on the Marvel Comics superhero team the Avengers. Produced by Marvel Studios and distributed by Walt Disney Studios Motion Pictures, it is the direct sequel to Avengers: Infinity War (2018) and the 22nd film in the Marvel Cinematic Universe (MCU).
+        </p>
+    </div>
+</div>
+
+<!-- Recognition Section -->
+<div class="container fade-in">
+    <div class="row g-4 justify-content-center">
+
+        <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 recognition-card h-100 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="fw-bold">Directed By</h5>
+                <p>Anthony Russo & Joe Russo</p>
             </div>
+        </div>
 
-            <div class="col-12 col-md-4">
-                <div class="p-3 border border-dark rounded-4 h-100">
-                    <p class="fw-bold">Production Company:</p>
-                    <p>Marvel Studios</p>
-                </div>
+        <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 recognition-card h-100 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="fw-bold">Production Company</h5>
+                <p>Marvel Studios</p>
             </div>
+        </div>
 
-            <div class="col-12 col-md-4">
-                <div class="p-3 border border-dark rounded-4 h-100">
-                    <p class="fw-bold">Starring:</p>
-                    <p class="small">
-                        Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth,
-                        Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd,
-                        Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong
+        <div class="col-12 col-md-4">
+            <div class="p-4 rounded-4 recognition-card h-100 d-flex flex-column justify-content-center align-items-center">
+                <h5 class="fw-bold">Starring</h5>
+                <p class="small">
+                    Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth,
+                    Scarlett Johansson, Jeremy Renner, Don Cheadle, Paul Rudd,
+                    Brie Larson, Karen Gillan, Danai Gurira, Benedict Wong
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Projects Section -->
+<div class="container fade-in">
+    <h1 class="display-5 fw-bold mb-5">Upcoming Avengers Projects</h1>
+    <div class="row g-4 justify-content-center">
+
+        <!-- Project 1 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-light h-100 text-center">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Captain_America_Brave_New_World_poster.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Captain America: Brave New World</h5>
+                    <p class="card-text">
+                        Sam Wilson takes on the mantle of Captain America and faces a global crisis that threatens international stability.
                     </p>
+                    <p class="fw-bold">Release: 2025</p>
+                    <a href="#" class="btn btn-outline-light mt-2">Explore Project</a>
                 </div>
             </div>
-
         </div>
-    </div>
 
+<<<<<<< HEAD
 <!-- Third Section Start -->
 <div class="container">
         <h1 class="display-5 fw-bold border-start border-light border-5 ps-3 mb-5">
@@ -128,10 +169,41 @@
                 </div>
             </div>
 
+=======
+        <!-- Project 2 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-light h-100 text-center">
+                <img src="https://static1.moviewebimages.com/wordpress/wp-content/uploads/2024/09/thunderbolts-poster.jpeg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">Thunderbolts</h5>
+                    <p class="card-text">
+                        A team of anti-heroes and former villains are recruited for dangerous missions by the government.
+                    </p>
+                    <p class="fw-bold">Release: 2025</p>
+                    <a href="#" class="btn btn-outline-light mt-2">Explore Project</a>
+                </div>
+            </div>
+>>>>>>> 8016122b03796753b95a9e4b65a2bd74341edb11
         </div>
-    </div>
-    <!-- Third Section End -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <!-- Project 3 -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="card text-light h-100 text-center">
+                <img src="https://m.media-amazon.com/images/M/MV5BOGM5MzA3MDAtYmEwMi00ZDNiLTg4MDgtMTZjOTc0ZGMyNTIwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">The Fantastic Four: First Steps</h5>
+                    <p class="card-text">
+                        Marvel's First Family joins the MCU, opening the door to a new cosmic storyline leading to future Avengers films.
+                    </p>
+                    <p class="fw-bold">Release: 2025</p>
+                    <a href="#" class="btn btn-outline-light mt-2">Explore Project</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
