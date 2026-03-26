@@ -1,54 +1,61 @@
-// [SECTION] JS FUNCTIONS
-// PERFORMS SPECIFIC TASKS AND ELIMINATE REPETITIVE CODES
-
-// SYNTAX
-// function functionName(parameters) {
-//     // code block
-// }
-
-// console.log("Hello World!");+
-// console.log("Hello World!");
-// console.log("Hello World!");
-// console.log("Hello World!");
-// console.log("Hello World!");
-// console.log("Hello World!");
-// console.log("Hello World!");
 // console.log("Hello World!");
 
-// function sayHello() {
-//     console.log("Hi im Racisto!");
-// }
+//[SECTION] JS Functions
+// Performs specific tasks and eliminate repeatetive codes
+// SYNTAX: function functionName(parameter){//code block}
 
-// // invocation of function
-// sayHello();
-// sayHello();
-// sayHello();
-// sayHello();
-// sayHello();
+console.log("Hello World!");
+console.log("Hello World!");
+console.log("Hello World!");
+console.log("Hello World!");
+console.log("Hello World!");
 
-// function showAlert() {
-//     alert("This is an alert!");
-// }
 
-// showAlert();
 
-// function startCalc() {
-//     let userInput = parseInt(prompt("Please select an Operation: \n(1) Addition \n(2) Subtraction \n(3) Multiplication"));
-//     let num1 = parseInt(prompt("Please enter the first number: "));
-//     let num2 = parseInt(prompt("Please enter the second number: "));
+function sayHello(){
+    console.log("Hello, San Fernando City, Pampanga!");
+}
 
-//     if (userInput == 1) {
-//         let sum = num1 + num2;
-//         alert("The sum is: " + sum);
-//     } else if (userInput == 2) {
-//         let difference = num1 - num2;
-//         alert("The difference is: " + difference);
-//     } else if (userInput == 3) {
-//         let product = num1 * num2;
-//         alert("The product is: " + product);
-//     } else {
-//         alert("Invalid input! Please select a valid operation.");
-//     }
-// }
+// Invocation/Invoke or Funciton Calling
+sayHello();
+sayHello();
+sayHello();
+sayHello();
+sayHello();
 
-// startCalc();
+function showAlert(){
+    alert("Hello, User!");
+}
+
+let num1 = 0, num2 = 0;
+
+function startCalc(){
+    let userInput = parseInt(prompt("Please select an action: \n[1] Input Numbers\n[2] Sum\n[3] Difference\n[4] Product\n[5] Quotient \n[6] Reset"));
+
+    switch (userInput){
+        case 1:
+            enterNumbers();
+            break;
+        case 2:
+            sum(); 
+            break;
+    }
+}
+
+function enterNumbers(){
+    let inputNum1 = parseInt(prompt("Enter first number."));
+    let inputNum2 = parseInt(prompt("Enter second number."));
+    num1 = inputNum1;
+    num2 = inputNum2;
+}
+
+function sum(){
+    if(num1 == 0 || num2 == 0){
+        alert("Please enter num1 or num2.")
+    }else{
+        let sum = num1 + num2;
+        alert(`The sum of ${num1} and ${num2} is ${sum}.`);
+        // alert("The sum of" + num1 + "and" + num2 + " is ", num1 + num2);
+    }
+}
+
