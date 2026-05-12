@@ -9,8 +9,7 @@ const server = express();
 const port = 5000;
 
 // Trigger connection to mongoDB thru mongoose
-mongoose.connect("mongodb://localhost:27017/");
-// mongoose.connect("mongodb+srv://admin:admin123@isad-db.re65v.mongodb.net/");
+mongoose.connect("mongodb+srv://admin:admin123@sd2-salazar.0hzurqi.mongodb.net/task-management?appName=SD2-SALAZAR");
 
 let db = mongoose.connection;
 
@@ -24,6 +23,16 @@ db.once("open", () => console.log("MongoDB Atlas Connection Succcess!"));
 
 const taskSchema = new mongoose.Schema({
     name: String,
+    description: String,
+    isActive: {
+        type: Boolean,
+        default: true
+    },
+    dateAdded: {
+        type: Date,
+        default: Date.now
+    },
+    dateCompleted: Date,
     status: {
         type: String,
         default: "pending"
@@ -52,11 +61,16 @@ server.get("/error", (req, res) => {
 server.post("/tasks/add", (req, res) => {
 
     Task.findOne({name: req.body.name}).then((result) => {
-        if(result.name != null && result.name == req.body.name){
+        if(result){
             res.send("Duplicate found. This task cannot be added!");
         }else{
             let newTask = new Task({
-                name: req.body.name
+                name: req.body.name,
+                description: req.body.description,
+                isActive: req.body.isActive,
+                dateCompleted: req.body.dateCompleted,
+                dateAdded: req.body.dateAdded,
+                status: req.body.status,
             });
 
             newTask.save().then((savedTask, saveErr) => {
@@ -69,12 +83,66 @@ server.post("/tasks/add", (req, res) => {
                         data: savedTask
                     });
                 }
+            }).catch((err) => {
+                res.status(500).send("Internal server error");
             })
         }
+    }).catch((err) => {
+        res.status(500).send("Internal server error");
     })
 
     
 })
+
+server.post("/tasks/edit/:taskId", (req, res) => {
+
+    Task.findById(req.params.taskId).then((task) => {
+        if(!task){
+            res.status(404).send("Task not found");
+        }else{
+            task.name = req.body.name;
+            task.description = req.body.description;
+
+            task.save().then((updatedTask) => {
+                res.status(200).send({
+                    code: 200,
+                    message: "Task updated successfully!",
+                    data: updatedTask
+                });
+            }).catch((err) => {
+                res.status(500).send("Internal server error");
+            })
+        }
+    }).catch((err) => {
+        res.status(500).send("Internal server error");
+    })
+
+    
+})
+
+server.post("/tasks/:taskId/mark-complete", (req, res) => {
+    Task.findOne({_id: req.params.taskId}).then((result, err) => {
+        if(result == null){
+            res.send("Task not found. Cannot mark as complete!");
+        }else{
+            result.status = "complete";
+            result.dateCompleted = new Date();
+
+            result.save().then((updatedTask, updateErr) => {
+                if(updateErr){
+                    res.send("There is an error completing the task.");
+                }else{
+                    res.status(200).send({
+                        code: 200,
+                        message: "Task is now marked as complete!",
+                        data: updatedTask
+                    });
+                }
+            })
+        }
+    })
+})
+
 
 
 
