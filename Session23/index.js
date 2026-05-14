@@ -143,8 +143,128 @@ server.post("/tasks/:taskId/mark-complete", (req, res) => {
     })
 })
 
+server.get("/tasks/all", (req, res) => {
+    Task.find({}).then((result, err) => {
+        if(err){
+            res.send("There is an error fetching all tasks.");
+        }else{
+            res.status(200).send({
+                code: 200,
+                message: "Here are all tasks.",
+                count: result.length,
+                data: result
+            });
+        }
+    })
+})
 
+server.get("/tasks/all/completed", (req, res) => {
+    Task.find({status: "complete"}).then((result, err) => {
+        if(err){
+            res.send("There is an error fetching all completed tasks.");
+        }else{
+            res.status(200).send({
+                code: 200,
+                message: "Here are all completed tasks.",
+                count: result.length,
+                data: result
+            });
+        }
+    })
+})
 
+server.get("/tasks/all/pending", (req, res) => {
+    Task.find({status: "pending"}).then((result, err) => {
+        if(err){
+            res.send("There is an error fetching all pending tasks.");
+        }else{
+            res.status(200).send({
+                code: 200,
+                message: "Here are all pending tasks.",
+                count: result.length,
+                data: result
+            });
+        }
+    })
+})
+
+// server.put("/tasks/active/:taskId", (req, res) => {
+//     Task.findById(req.params.taskId).then((task) => {
+//         if(!task){
+//             res.status(404).send("Task not found");
+//         }else{
+//             task.isActive = !task.isActive;
+//             task.save().then((updatedTask) => {
+//                 res.status(200).send({
+//                     code: 200,
+//                     message: task.isActive ? "Task is now active!" : "Task is now archived!",
+//                     data: updatedTask
+//                 });
+//             }).catch((err) => {
+//                 res.status(500).send("Internal server error");
+//             })
+//         }
+//     }).catch((err) => {
+//         res.status(500).send("Internal server error");
+//     })
+// })
+
+server.patch("/tasks/active/:taskId", (req, res) => {
+    Task.findOne({_id: req.params.taskId}).then((result, err) => {
+        if(result == null){
+            res.send("Task not found. Cannot update active status!");
+        }else{
+            if(result.isActive == false){
+                result.isActive = true;
+            }else{
+                result.isActive = false;
+            } 
+
+            result.save().then((updatedTask, updateErr) => {
+                if(updateErr){
+                    res.send("There is an error updating task active status.");
+                }else{
+                    res.status(200).send({
+                        code: 200,
+                        message: "Task active status is now updated!",
+                        data: updatedTask   
+                    });
+                }
+            })
+        }
+    })
+})
+
+server.delete("/tasks/delete/:taskId", (req, res) => {
+    Task.findOneAndDelete({_id: req.params.taskId}).then((deletedTask, deleteErr) => {
+        if(deleteErr){
+            res.send("There is an error deleting the task.");
+        }else if(deletedTask){
+            res.status(200).send({
+                code: 200,
+                message: "Task deleted successfully!",
+                data: deletedTask   
+            });
+        }else{
+            res.send("Task not found. Cannot delete!");
+        }
+    })
+})
+
+server.get("/tasks/all/archived", (req, res) => {
+    Task.find({isActive: false}).then((result, err) => {
+        if(err){
+            res.send("There is an error fetching archived tasks.");
+        }else{
+            res.status(200).send({
+                code: 200,
+                message: "Here are all archived tasks.",
+                count: result.length,
+                data: result
+            });
+        }
+    })
+})
 
 
 server.listen(port, () => console.log(`Server is now running at port ${port}.`))
